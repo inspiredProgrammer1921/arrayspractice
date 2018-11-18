@@ -37,7 +37,7 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 // });
 
 //Best Method to Get 21 and Older!!!
-const canDrink = ages.filter(age => age >= 21);
+// const canDrink = ages.filter(age => age >= 21);
 
 //Filter Retail Companies
 
@@ -47,15 +47,15 @@ const canDrink = ages.filter(age => age >= 21);
 //     }
 // });
 
-const retailCompanies = companies.filter(company => company.category === 'Retail');
+// const retailCompanies = companies.filter(company => company.category === 'Retail');
 
-//Get Companies Starting in 80's
+// //Get Companies Starting in 80's
 
-const eightiesCompanies = companies.filter(company => (company.start >= 1980 && company.start < 1990));
+// const eightiesCompanies = companies.filter(company => (company.start >= 1980 && company.start < 1990));
 
-//Get Companies that Lasted 10years or More
+// //Get Companies that Lasted 10years or More
 
-const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
+// const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
 
 // console.log(lastedTenYears);
 
@@ -65,11 +65,76 @@ const lastedTenYears = companies.filter(company => (company.end - company.start 
 //     return company.name;
 // });
 
-const testMap = companies.map(function (company) {
-    return 1;
-});
+// const testMap = companies.map(function (company) {
+//     return '${company.name} [${company.start} - ${company.end}';
+// });
 
-console.log(testMap);
-  //sort
-  //reduce
+// const testMap = companies.map(company =>
+//     '${company.name} [${company.start} - ${company.end}]');
 
+// const agesSquare = ages.map(age => Math.sqrt(age));
+// const agesTimesTwo = ages.map(age => age * 2);
+
+// console.log(agesTimesTwo);
+
+// const ageMap = ages
+//     .map(age => Math.sqrt(age))
+//     .map(age => age * 2);
+
+// console.log(ageMap);
+
+//sort 
+
+// Sort companies by start year
+
+// const sortedCompanies = companies.sort(function (c1, c2) {
+//     if (c1.start > c2.start) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// });
+
+// const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+
+// console.log(sortedCompanies);
+
+// Sort agers
+// const sortAges = ages.sort((a, b) => b - a);
+
+// console.log(sortAges);
+
+//reduce
+
+// let ageSum = 0;
+// for (let i = 0; i < ages.length; i++) {
+//     ageSum += ages[i];
+// }
+
+// const ageSum = ages.reduce(function (total, age) {
+//     return total + age;
+// }, 0);
+
+// const ageSum = ages.reduce((total, age) => total + age, 0);
+
+//Get total years for all companies
+
+// const totalYears = companies.reduce(function (total, company) {
+//     return total + (company.end - company.start);
+// }, 0);
+
+// const totalYears = companies.reduce((total, company) =>
+//     total + (company.end - company.start), 0);
+
+
+// console.log(totalYears);
+
+// Combine Methods
+
+const combined = ages
+    .map(age => age * 2)
+    .filter(age => age >= 40)
+    .sort((a, b) => a - b)
+    .reduce((a, b) => a + b, 0);
+
+console.log(combined);
